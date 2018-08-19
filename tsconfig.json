@@ -16,7 +16,14 @@
     "noImplicitAny": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "experimentalDecorators": true,
+    "paths": {
+      "@stores": ["src/stores"],
+      "@stores/*": ["src/stores/*"],
+      "@ui": ["src/components"],
+      "@ui/*": ["src/components/*"]
+    },
   },
   "exclude": [
     "node_modules",
