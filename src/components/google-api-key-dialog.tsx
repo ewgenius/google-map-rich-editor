@@ -2,7 +2,7 @@ import * as React from 'react';
 import { withStyles, createStyles, WithStyles } from '@material-ui/core/styles';
 import { observer } from 'mobx-react';
 
-import { apiKeyStore } from '@stores';
+import { apiKeyStore } from '@stores/api-key-store';
 
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';

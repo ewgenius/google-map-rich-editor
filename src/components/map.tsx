@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { withStyles, createStyles, WithStyles } from '@material-ui/core/styles';
-import { GoogleMap, withScriptjs, withGoogleMap } from 'react-google-maps';
+import { GoogleMap, Marker, withScriptjs, withGoogleMap } from 'react-google-maps';
 import { observer } from 'mobx-react';
 
-import { apiKeyStore } from '@stores';
+import { apiKeyStore, pinsStore } from '@stores';
 // AIzaSyBUW7lTUlZZijmlDevUwriFvsH7T42Ofu0
 
 const styles = createStyles({
@@ -19,7 +19,13 @@ const WrappedMap = withScriptjs(withGoogleMap(
       return (
         <GoogleMap
           defaultZoom={8}
-          defaultCenter={{ lat: -34.397, lng: 150.644 }} />
+          defaultCenter={{ lat: -34.397, lng: 150.644 }}>
+          {pinsStore.pins.map((pin, i) => {
+            return (
+              <Marker key={i} position={{ lat: -34.397, lng: 150.644 }} />
+            );
+          })}
+        </GoogleMap>
       );
     }
   }

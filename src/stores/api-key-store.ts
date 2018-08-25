@@ -5,6 +5,7 @@ export class ApiKeyStore {
     const key = localStorage.getItem('apiKey');
     if (!!key) {
       this.setKey(key);
+      this.ready = true;
     }
   }
 
@@ -19,6 +20,7 @@ export class ApiKeyStore {
     this.key = value;
   }
   
+  @action
   public save() {
     this.ready = !!this.key;
     localStorage.setItem('apiKey', this.key);
